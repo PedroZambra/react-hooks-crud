@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
   min-height: 100vh;
+}
+
+.app-header {
+  width: 100%;
+  height: 100px;
+}
+
+.app-header h1 {
+  font-variant: small-caps;
+  font-size: 3em;
+}
+
+header h1 {
+  text-align: center;
+  line-height: 100px;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form input[type=text] {
+  padding: 10px;
+  width: 200px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #000;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+form input[type=text]:hover {
+  border-bottom: 1px solid #f6653c;
+}
+
+.range-container {
+  margin-top: 15px;
+  letter-spacing: 0.4px;
+  color: rgb(129, 129, 129);
+}
+
+.btn-submit {
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: 2px solid #f6653c;
+  background: #f6653c;
+}
+.btn-submit:hover {
+  background: #fff;
+  color: #f6653c
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5vh 0;
+}
+
+.task {
+  width: 75%;
+  padding: 10px;
+  margin: 2px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.5fr;
+  grid-gap: 5px;
+  align-items: center;
+  border-bottom: 1px solid #f6653c;
+
+}
+
+.task p:nth-child(1) {
+  overflow: hidden;
+}
+
+.task-acctions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-acctions input {
+  margin: 0 5px;
+}
+
+.btn-edit {
+  min-width: 50%;
+  height: 40px;
+  color: #57cc99;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #57cc99;
+  background: #fff;
+}
+
+.btn-edit:hover {
+  background: #57cc99;
+  color: #fff;
+}
+
+.btn-delete {
+  min-width: 50%;
+  height: 40px;
+  color: #d90429;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #d90429;
+  background: #fff;
+}
+
+.btn-delete:hover {
+  background: #d90429;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .task {
+    grid-template-areas:  "a a"
+                          "b c";
+    grid-template-rows: 50px 50px;
+    grid-template-columns: auto auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .task p:nth-child(1) {
+    grid-area: a;
+  }
+
+  .task p:nth-child(2) {
+    grid-area: b;
+  }
+
+  .task-acctions {
+    grid-area: c;
+  }
+}
+
+@media (max-width: 576px) {
+  .task {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
